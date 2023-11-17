@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+  <appenders>
+    <File name="ErrorsFile" fileName="logs/errors.log">
+   <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      <Filters>
+        <MarkerFilter marker="INVALID_ARGUMENTS" />
+      </Filters>
+    </File>
+    <File name="QueriesFile" fileName="logs/queries.log">
+       <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+          <Filters>
+            <MarkerFilter marker="QUERIES_HISTORY" />
+          </Filters>
+        </File>
+    </appenders>
+
+  <loggers>
+    <root level="info">
+      <appender-ref ref="ErrorsFile" />
+      <appender-ref ref="QueriesFile" />
+    </root>
+  </loggers>
+</configuration>
